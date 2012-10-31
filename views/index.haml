@@ -1,0 +1,12 @@
+- content_for :title do
+  comet chat
+
+- content_for :head do
+  :javascript
+    var app_root = "#{app_root}";
+  %script{:type => 'text/javascript', :src => "#{app_root}/js/index.js"}
+
+%div#chat
+  %input{:id => 'message', :value => 'こんにちは', :size => 80}
+  %input{:id => 'btn_send', :type => 'button', :value => 'start'}
+  %ul#timeline
