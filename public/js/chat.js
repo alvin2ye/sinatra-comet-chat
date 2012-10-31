@@ -4,7 +4,7 @@ var Chat = function(url){
   var self = this;
 
   this.post = function(data){
-    $.post(self.url, {'data' : data});
+    $.post(self.url, {'data' : JSON.stringify(data)});
   };
 
   this.start = function(){
@@ -18,7 +18,7 @@ var Chat = function(url){
       {
         url : self.url,
         success : function(data){
-          if(data && data.length > 0){
+          if(data){
             if(self.on_get && typeof self.on_get == 'function') self.on_get(data);
           }
         },
@@ -28,7 +28,7 @@ var Chat = function(url){
           self.get();
         },
         type : 'GET',
-        dataType : 'text',
+        dataType : 'json',
         timeout : 60000
       }
     );
