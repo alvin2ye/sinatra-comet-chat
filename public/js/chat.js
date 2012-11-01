@@ -21,11 +21,12 @@ var Chat = function(url){
           if(data){
             if(self.on_get && typeof self.on_get == 'function') self.on_get(data);
           }
+          self.get();
         },
         error : function(req, stat, e){
+          setTimeout(self.get, 10000);
         },
         complete : function(e){
-          self.get();
         },
         type : 'GET',
         dataType : 'json',
