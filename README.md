@@ -1,7 +1,7 @@
 Comet Chat
 ==========
 
-* Ruby 1.8.7+
+* Ruby 1.8.7+ or 1.9.2+
 * Sinatra 1.3+
 
 
