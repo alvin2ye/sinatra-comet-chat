@@ -24,6 +24,5 @@ Deploy
 ------
 
     % heroku create --stack cedar
-    % heroku addons:add memcache:5mb
     % git push heroku master
     % heroku open
