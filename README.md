@@ -9,7 +9,7 @@ Install Dependencies
 --------------------
 
     % gem install bundler foreman
-    % bundle install --path vendor/bundle
+    % bundle install
 
 
 Run
@@ -18,3 +18,12 @@ Run
     % foreman start
 
 => http://localhost:5000
+
+
+Deploy
+------
+
+    % heroku create --stack cedar
+    % heroku addons:add memcache:5mb
+    % git push heroku master
+    % heroku open
